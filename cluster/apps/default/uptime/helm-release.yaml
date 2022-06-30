@@ -50,9 +50,9 @@ spec:
           - path: /
             pathType: Prefix
         tls:
-        - hosts:
-          - *host
-        - secretName: "{{ .Release.Name }}-tls"
+          - secretName: "{{ .Release.Name }}-tls"
+            hosts:
+              - *host
     persistence:
       data:
         enabled: true
