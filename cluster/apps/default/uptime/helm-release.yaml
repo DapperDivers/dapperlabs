@@ -2,15 +2,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: uptime
+  name: uptime-kuma
   namespace: default
 spec:
-  interval: 10m0s
+  dependsOn:
+  - name: traefik
+    namespace: traefik
   maxHistory: 3
+  interval: 10m0s
   suspend: false
-  releaseName: uptime
+  releaseName: uptime-kuma
   chart:
     spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: uptime-kuma
       version: 1.3.5
       sourceRef:
@@ -41,8 +45,11 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
           hajimari.io/enable: "true"
           hajimari.io/icon: "robot"
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
+          hajimari.io/group: network
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.middlewares: traefik-default-middlewares-chain@kubernetescrd
+          traefik.ingress.kubernetes.io/router.tls.options: traefik-secure-tlsoptions@kubernetescrd
+
         hosts:
         - host: "uptime.${SECRET_DOMAIN}"
           paths:
@@ -51,7 +58,7 @@ spec:
         tls:
         - hosts:
           - "uptime.${SECRET_DOMAIN}"
-        - secretName: "uptime-tls"
+        - secretName: "uptime-kuma-tls"
     persistence:
       data:
         enabled: true
