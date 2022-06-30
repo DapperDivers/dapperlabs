@@ -61,10 +61,10 @@ spec:
         existingClaim: uptime-data
         mountPath: /app/data
     podAnnotations:
-      configmap.reloader.stakater.com/reload: "hajimari-settings"
+      configmap.reloader.stakater.com/reload: "uptime-kuma-settings"
     resources:
       requests:
-        memory: 100Mi
+        memory: 100Mis
         cpu: 100m
       limits:
         memory: 250Mi
