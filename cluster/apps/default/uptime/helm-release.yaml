@@ -10,7 +10,7 @@ spec:
   releaseName: uptime-kuma
   chart:
     spec:
-      chart: kah-common-chart
+      chart: uptime-kuma
       version: 1.3.5
       sourceRef:
         kind: HelmRepository
