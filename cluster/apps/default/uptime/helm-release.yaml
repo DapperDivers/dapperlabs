@@ -37,13 +37,13 @@ spec:
     ingress:
       main:
         enabled: true
+        ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
           hajimari.io/enable: "true"
           hajimari.io/icon: robot
-          hajimari.io/group: network
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
         hosts:
         - host: uptime.${SECRET_DOMAIN}
           paths:
@@ -52,7 +52,7 @@ spec:
         tls:
         - hosts:
           - uptime.${SECRET_DOMAIN}
-        - secretName: nathanpawelek-com-tls
+        - secretName: uptime-tls
     persistence:
       data:
         enabled: true
