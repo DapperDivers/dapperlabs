@@ -6,6 +6,9 @@ resources:
   - cert-manager
   - kube-vip
   # - kured
+  - intel-gpu-plugin
+  - nfs-subdir-external-provisioner
   - metrics-server
   - reflector
   - reloader
+
