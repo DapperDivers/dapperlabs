@@ -48,7 +48,7 @@ spec:
           hajimari.io/icon: robot
           hajimari.io/group: network
         hosts:
-        - host: uptime-kuma.${DOMAIN}
+        - host: uptime-kuma.${SECRET_DOMAIN}
           paths:
           - path: /
             pathType: Prefix
