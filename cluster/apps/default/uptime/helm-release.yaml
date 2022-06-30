@@ -15,7 +15,7 @@ spec:
       version: 1.3.5
       sourceRef:
         kind: HelmRepository
-        name: uptime
+        name: hajimari
         namespace: flux-system
       interval: 15m
   values:
@@ -38,9 +38,9 @@ spec:
       main:
         enabled: true
         annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.middlewares: traefik-default-middlewares-chain@kubernetescrd
-          traefik.ingress.kubernetes.io/router.tls.options: traefik-secure-tlsoptions@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
           hajimari.io/enable: "true"
           hajimari.io/icon: robot
           hajimari.io/group: network
