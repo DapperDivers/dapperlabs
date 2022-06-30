@@ -48,14 +48,14 @@ spec:
           hajimari.io/icon: robot
           hajimari.io/group: network
         hosts:
-        - host: uptime-kuma.${SECRET_DOMAIN}
-          paths:
-          - path: /
-            pathType: Prefix
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-        - hosts:
-          - uptime-kuma.${SECRET_DOMAIN}
-        - secretName: uptime-kuma-tls
+          - secretName: "{{ .Release.Name }}-tls"
+            hosts:
+              - *host
     persistence:
       data:
         enabled: true
