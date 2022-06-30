@@ -10,7 +10,7 @@ spec:
   releaseName: uptime-kuma
   chart:
     spec:
-      chart: uptime-kuma
+      chart: kah-common-chart
       version: 1.3.5
       sourceRef:
         kind: HelmRepository
@@ -58,8 +58,13 @@ spec:
         enabled: true
         existingClaim: uptime-data
         mountPath: /app/data
-    podAnnotations:
-      configmap.reloader.stakater.com/reload: "uptime-kuma-settings"
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/name: *app
     resources:
       requests:
         memory: 100Mis
