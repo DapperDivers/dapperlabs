@@ -20,9 +20,6 @@ spec:
   values:
     global:
       nameOverride: *app
-    controller:
-      replicas: 3
-      type: RollingUpdate
     image:
       repository: louislam/uptime-kuma
       tag: 1.17.1
@@ -45,10 +42,10 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
         hosts:
-        - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
-          paths:
-          - path: /
-            pathType: Prefix
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - secretName: "{{ .Release.Name }}-tls"
             hosts:
