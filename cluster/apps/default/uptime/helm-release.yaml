@@ -25,10 +25,9 @@ spec:
   values:
     image:
       repository: louislam/uptime-kuma
-      tag: 1.17.1-alpine
+      tag: 1.17.1
     env:
       TZ: ${TIMEZONE}
-      UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN: 0
     controller:
       type: deployment
       replicas: 1
