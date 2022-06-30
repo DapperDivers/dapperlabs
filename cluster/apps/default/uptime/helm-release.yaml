@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: uptime
+  name: uptime-kuma
   namespace: default
 spec:
   dependsOn:
@@ -11,7 +11,7 @@ spec:
   maxHistory: 3
   interval: 10m0s
   suspend: false
-  releaseName: uptime
+  releaseName: uptime-kuma
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
