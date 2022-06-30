@@ -11,7 +11,7 @@ spec:
   maxHistory: 3
   interval: 10m0s
   suspend: false
-  releaseName: uptime
+  releaseName: uptime-kuma
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
@@ -22,7 +22,7 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
   values:
-    fullnameOverride: uptime
+    fullnameOverride: uptime-kuma
     image:
       repository: louislam/uptime-kuma
       tag: 1.17.1-alpine
@@ -31,7 +31,7 @@ spec:
       UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN: 0
     controller:
       type: deployment
-      replicas: 1
+      replicas: "1"
     service:
       main:
         ports:
