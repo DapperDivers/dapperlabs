@@ -2,65 +2,68 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app uptime-kuma
-  namespace: default
+  name: uptime
+  namespace: uptime
 spec:
+  dependsOn:
+  - name: traefik
+    namespace: traefik
+  maxHistory: 3
   interval: 10m0s
   suspend: false
-  releaseName: uptime-kuma
+  releaseName: uptime
   chart:
     spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: uptime-kuma
       version: 1.3.5
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home
+        name: k8s-at-home-charts
         namespace: flux-system
-      interval: 15m
   values:
-    global:
-      nameOverride: *app
+    fullnameOverride: uptime
     image:
       repository: louislam/uptime-kuma
-      tag: 1.17.1
+      tag: 1.17.1-alpine
     env:
       TZ: ${TIMEZONE}
+      UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN: 0
+    controller:
+      type: deployment
+      replicas: 1
     service:
       main:
         ports:
           http:
-            enabled: true
             port: 3001
     ingress:
       main:
         enabled: true
-        ingressClassName: "traefik"
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.middlewares: traefik-default-middlewares-chain@kubernetescrd
+          traefik.ingress.kubernetes.io/router.tls.options: traefik-secure-tlsoptions@kubernetescrd
           hajimari.io/enable: "true"
-          hajimari.io/icon: "robot"
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
+          hajimari.io/icon: robot
+          hajimari.io/group: network
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
+        - host: uptime-kuma.${DOMAIN}
+          paths:
+          - path: /
+            pathType: Prefix
+        tls:
+        - hosts:
+          - uptime-kuma.${SECRET_DOMAIN}
+        - secretName: uptime-kuma-tls
     persistence:
       data:
         enabled: true
         existingClaim: uptime-data
         mountPath: /app/data
-    topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            app.kubernetes.io/name: *app
     resources:
       requests:
-        memory: 100Mis
+        memory: 100Mi
         cpu: 100m
       limits:
         memory: 250Mi
