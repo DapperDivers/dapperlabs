@@ -53,10 +53,10 @@ spec:
         labelSelector:
           matchLabels:
             app.kubernetes.io/name: *app
-    persistence:
-      config:
-        enabled: true
-        existingClaim: overseerr-config
+    # persistence:
+    #   config:
+    #     enabled: true
+    #     existingClaim: overseerr-config
     resources:
       requests:
         memory: 100Mi
