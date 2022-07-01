@@ -2,7 +2,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: internal-ips
+  name: private-ips
   namespace: networking
 spec:
   ipWhiteList:
@@ -10,13 +10,14 @@ spec:
       - 10.0.0.0/8
       - 172.16.0.0/12
       - 192.168.0.0/16
+
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: internal-only
+  name: local-only
   namespace: networking
 spec:
   chain:
     middlewares:
-      - name: internal-ips
+      - name: private-ips
