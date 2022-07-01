@@ -5,6 +5,3 @@ resources:
   - addons
   - helm-release.yaml
   - service-monitor.yaml
-
-configurations:
-  - kustomizeconfig.yaml
