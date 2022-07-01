@@ -44,8 +44,3 @@ spec:
           - secretName: "{{ .Release.Name }}-tls"
             hosts:
               - *host
-    persistence:
-      config:
-        enabled: true
-        storageClass: local-path
-        existingClaim: bazarr-config
