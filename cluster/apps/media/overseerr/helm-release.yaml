@@ -46,6 +46,10 @@ spec:
           - secretName: "{{ .Release.Name }}-tls"
             hosts:
               - *host
+    persistence:
+      config:
+        enabled: true
+        existingClaim: overseerr-config
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
