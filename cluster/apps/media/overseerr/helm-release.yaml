@@ -5,7 +5,7 @@ metadata:
   name: &app overseerr
   namespace: media
 spec:
-  interval: 10m0s
+  interval: 11m0s
   chart:
     spec:
       version: 5.3.2
