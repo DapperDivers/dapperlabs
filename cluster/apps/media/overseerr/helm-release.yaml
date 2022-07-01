@@ -5,7 +5,7 @@ metadata:
   name: &app overseerr
   namespace: media
 spec:
-  interval: 5m
+  interval: 10m0s
   chart:
     spec:
       version: 5.3.2
@@ -14,7 +14,6 @@ spec:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
-      interval: 5m
   install:
     createNamespace: true
     remediation:
@@ -61,3 +60,9 @@ spec:
       config:
         enabled: true
         storageClass: local-path
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 100m
+      limits:
+        memory: 250Mi
