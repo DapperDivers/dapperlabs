@@ -1,6 +1,3 @@
-# DO NOT EDIT MANUALLY. File is managed via GitHub actions.
-# Script: https://github.com/mchestr/home-cluster/.github/scripts/cloudflare-proxied-networks.py
-# Action: https://github.com/mchestr/home-cluster/.github/workflows/schedule-cloudflare-proxied-networks-update.yaml
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
@@ -8,6 +5,7 @@ metadata:
   name: cloudflare-ips
   namespace: networking
 spec:
+  # https://www.cloudflare.com/ips/
   ipWhiteList:
     sourceRange:
       - 173.245.48.0/20
