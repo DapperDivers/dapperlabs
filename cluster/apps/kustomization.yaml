@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - media
   - default
+  - monitoring
   - flux-system
   - kube-system
   - networking
