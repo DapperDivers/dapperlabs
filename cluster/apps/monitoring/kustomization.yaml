@@ -6,7 +6,6 @@ resources:
   - namespace.yaml
   - goldilocks
   - grafana
-  - intel-gpu-exporter
   - kube-prometheus-stack
   - loki
   # - mimir
