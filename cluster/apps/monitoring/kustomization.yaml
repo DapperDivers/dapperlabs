@@ -7,7 +7,6 @@ resources:
   - goldilocks
   - grafana
   - kube-prometheus-stack
-  - loki
   # - mimir
   - node-problem-detector
   - thanos
