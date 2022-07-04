@@ -2,17 +2,17 @@
 apiVersion: objectbucket.io/v1alpha1
 kind: ObjectBucketClaim
 metadata:
-  name: mimir-ruler-ceph-bucket-v1
+  name: mimir-ruler-local-path-v1
   namespace: monitoring
 spec:
   bucketName: ruler-v1
-  storageClassName: ceph-bucket
+  storageClassName: local-path
 ---
 apiVersion: objectbucket.io/v1alpha1
 kind: ObjectBucketClaim
 metadata:
-  name: mimir-tsdb-ceph-bucket-v1
+  name: mimir-tsdb-local-path-v1
   namespace: monitoring
 spec:
   bucketName: tsdb-v1
-  storageClassName: ceph-bucket
+  storageClassName: local-path

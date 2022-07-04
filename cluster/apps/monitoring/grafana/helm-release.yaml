@@ -145,7 +145,7 @@ spec:
     persistence:
       enabled: false
       # type: statefulset
-      # storageClassName: "ceph-block"
+      # storageClassName: "local-path"
       # size: 10Gi
     affinity:
       podAntiAffinity:

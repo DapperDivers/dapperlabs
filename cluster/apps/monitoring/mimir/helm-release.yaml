@@ -48,34 +48,34 @@ spec:
       clusterLabel: null
   valuesFrom:
     - targetPath: mimir.structuredConfig.ruler_storage.s3.bucket_name
-      name: mimir-ruler-ceph-bucket-v1
+      name: mimir-ruler-local-path-v1
       kind: ConfigMap
       valuesKey: BUCKET_NAME
     - targetPath: mimir.structuredConfig.ruler_storage.s3.endpoint
-      name: mimir-ruler-ceph-bucket-v1
+      name: mimir-ruler-local-path-v1
       kind: ConfigMap
       valuesKey: BUCKET_HOST
     - targetPath: mimir.structuredConfig.ruler_storage.s3.access_key_id
-      name: mimir-ruler-ceph-bucket-v1
+      name: mimir-ruler-local-path-v1
       kind: Secret
       valuesKey: AWS_ACCESS_KEY_ID
     - targetPath: mimir.structuredConfig.ruler_storage.s3.secret_access_key
-      name: mimir-ruler-ceph-bucket-v1
+      name: mimir-ruler-local-path-v1
       kind: Secret
       valuesKey: AWS_SECRET_ACCESS_KEY
     - targetPath: mimir.structuredConfig.blocks_storage.s3.bucket_name
-      name: mimir-tsdb-ceph-bucket-v1
+      name: mimir-tsdb-local-path-v1
       kind: ConfigMap
       valuesKey: BUCKET_NAME
     - targetPath: mimir.structuredConfig.blocks_storage.s3.endpoint
-      name: mimir-tsdb-ceph-bucket-v1
+      name: mimir-tsdb-local-path-v1
       kind: ConfigMap
       valuesKey: BUCKET_HOST
     - targetPath: mimir.structuredConfig.blocks_storage.s3.access_key_id
-      name: mimir-tsdb-ceph-bucket-v1
+      name: mimir-tsdb-local-path-v1
       kind: Secret
       valuesKey: AWS_ACCESS_KEY_ID
     - targetPath: mimir.structuredConfig.blocks_storage.s3.secret_access_key
-      name: mimir-tsdb-ceph-bucket-v1
+      name: mimir-tsdb-local-path-v1
       kind: Secret
       valuesKey: AWS_SECRET_ACCESS_KEY
