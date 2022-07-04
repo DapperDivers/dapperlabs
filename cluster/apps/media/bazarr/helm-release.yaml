@@ -50,6 +50,24 @@ spec:
       config:
         enabled: true
         existingClaim: bazarr-config
+    nfs-nas-tv:
+      enabled: true
+      type: custom
+      volumeSpec:
+        nfs:
+          server: "${BOOTSTRAP_NAS_TOWER_IP}"
+          path: /mnt/NFS/Tower
+      mountPath: /mnt/user/Media
+      readOnly: false
+    nfs-nas-movies:
+      enabled: true
+      type: custom
+      volumeSpec:
+        nfs:
+          server: "${BOOTSTRAP_NAS_TOWER_2_IP}"
+          path: /mnt/NFS/Tower-2
+      mountPath: /mnt/user/Media
+      readOnly: false
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
