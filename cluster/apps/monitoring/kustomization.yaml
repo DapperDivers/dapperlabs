@@ -4,8 +4,6 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - namespace.yaml
-  - blackbox-exporter
-  - generic-rules
   - goldilocks
   - grafana
   - intel-gpu-exporter
@@ -14,4 +12,3 @@ resources:
   # - mimir
   - node-problem-detector
   - thanos
-  - unifi-poller
