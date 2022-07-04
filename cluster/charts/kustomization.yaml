@@ -12,5 +12,7 @@ resources:
   - metrics-server.yaml
   - stakater.yaml
   - traefik.yaml
+  - grafana.yaml
+  - prometheus-community.yaml
   - weaveworks-kured.yaml
   - nfs-subdir-external-provisioner.yaml
