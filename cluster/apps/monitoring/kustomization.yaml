@@ -13,9 +13,5 @@ resources:
   - loki
   # - mimir
   - node-problem-detector
-  - snmp-exporter
   - thanos
   - unifi-poller
-  - uptimerobot-heartbeat
-  - vector
-  - vpa
