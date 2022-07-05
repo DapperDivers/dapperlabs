@@ -16,4 +16,3 @@ resources:
   - prometheus-community.yaml
   - weaveworks-kured.yaml
   - nfs-subdir-external-provisioner.yaml
-  - weaveworks-kured.yaml
