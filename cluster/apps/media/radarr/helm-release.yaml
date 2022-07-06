@@ -8,7 +8,7 @@ spec:
   interval: 15m
   chart:
     spec:
-      version: 1.1.2
+      version: 16.2.3
       chart: kah-common-chart
       sourceRef:
         kind: HelmRepository
@@ -26,6 +26,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/k8s-at-home/radarr
+      tag: v4.1.0.6175
     env:
       TZ: "${TIMEZONE}"
       RADARR__INSTANCE_NAME: Radarr
@@ -45,7 +46,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
           hajimari.io/enable: "true"
-          hajimari.io/icon: "subtitles"
+          hajimari.io/icon: "filmstrip"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
         hosts:
