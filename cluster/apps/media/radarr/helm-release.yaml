@@ -77,8 +77,8 @@ spec:
         volumeSpec:
           nfs:
             server: 192.168.1.208
-            path: /mnt/NFS/Tower/Movies
-        mountPath: /mnt/user/Media/movies
+            path: /mnt/user/Media/movies
+        mountPath: /mnt/NFS/Tower/Movies
         readOnly: false
     podAnnotations:
       configmap.reloader.stakater.com/reload: radarr-pushover
