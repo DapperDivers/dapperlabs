@@ -123,7 +123,7 @@ spec:
           fsType: xfs
         mountOptions: []
 
-    volumeSnapshotClasses:
+    volumeSnapshotClass:
       - name: csi-truenas-iscsi
         deletionPolicy: Delete # Delete, Retain
         annotations:

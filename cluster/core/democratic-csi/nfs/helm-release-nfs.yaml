@@ -127,7 +127,7 @@ spec:
           - nfsvers=4
           - sec=sys
 
-    volumeSnapshotClasses:
+    volumeSnapshotClass:
       - name: csi-truenas-nfs
         deletionPolicy: Delete # Delete, Retain
         annotations:
