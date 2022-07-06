@@ -16,3 +16,4 @@ resources:
   - prometheus-community.yaml
   - weaveworks-kured.yaml
   - nfs-subdir-external-provisioner.yaml
+  - democratic-csi.yaml
