@@ -24,6 +24,11 @@
       - nfs-common
       - nvme-cli
       - open-iscsi
+      - cifs-utils
+      - lsscsi
+      - sg3-utils
+      - multipath-tools
+      - scsitools
       - psmisc
       - smartmontools
       - socat
@@ -31,6 +36,8 @@
       - unattended-upgrades
       - unzip
     install_recommends: false
+
+- name: Configure multipath for the iscsi-based drivers
 
 - name: Install RasPi specific packages
   ansible.builtin.apt:
