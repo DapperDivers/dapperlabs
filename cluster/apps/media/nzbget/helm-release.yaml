@@ -2,7 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: nzbget
+  name: &app nzbget
+  namespace: media
 spec:
   interval: 5m
   chart:
@@ -16,6 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    global:
+      nameOverride: *app
     ingress:
       dashboard:
         enabled: true
