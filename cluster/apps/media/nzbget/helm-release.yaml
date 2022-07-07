@@ -27,14 +27,14 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: media-nzbget-chain@kubernetescrd
         hosts:
-          - host: "nzbget.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
         tls:
-          - hosts:
-              - "nzbget.${SECRET_DOMAIN}"
-            secretName: nzbget-${SECRET_DOMAIN/./-}-tls
+          - secretName: "{{ .Release.Name }}-tls"
+            hosts:
+              - *host
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
