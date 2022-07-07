@@ -1,0 +1,57 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nzbget
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: nzbget
+      version: 12.3.2
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    ingress:
+      dashboard:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "pirate"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.middlewares: media-nzbget-chain@kubernetescrd
+        hosts:
+          - host: "nzbget.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "nzbget.${SECRET_DOMAIN}"
+            secretName: nzbget-${SECRET_DOMAIN/./-}-tls
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: nzbget-config-v1
+      downloads:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.7
+            path: /mnt/user/Rhino
+        mountPath: /downloads
+        readOnly: false
+    env:
+      TZ: "${TIMEZONE}"
