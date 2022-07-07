@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: &app radarr-uhd
+  name: &app sonarr-uhd
   namespace: media
 spec:
   interval: 15m
   chart:
     spec:
       version: 16.2.3
-      chart: radarr
+      chart: sonarr
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -25,15 +25,15 @@ spec:
     global:
       nameOverride: *app
     image:
-      repository: ghcr.io/k8s-at-home/radarr
-      tag: 4.2.0.6407
+      repository: ghcr.io/k8s-at-home/sonarr
+      tag: 3.0.8.1507
     env:
       TZ: "${TIMEZONE}"
-      RADARR__INSTANCE_NAME: Radarr (UHD)
-      RADARR__PORT: &port 7878
-      RADARR__BRANCH: nightly
-      RADARR__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
-      RADARR__LOG_LEVEL: info
+      sonarr__INSTANCE_NAME: sonarr
+      sonarr__PORT: &port 7878
+      sonarr__BRANCH: nightly
+      sonarr__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
+      sonarr__LOG_LEVEL: info
     service:
       main:
         ports:
@@ -66,7 +66,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: radarr-uhd-config-v1
+        existingClaim: sonarr-config-v1
       media:
         enabled: true
         type: custom
