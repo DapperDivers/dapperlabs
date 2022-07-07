@@ -49,7 +49,43 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: bazarr-config
+        existingClaim: bazarr-config-v1
+      movies:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.208
+            path: /mnt/user/Media/movies
+        mountPath: /mnt/movies
+        readOnly: false
+      movies-4k:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.7
+            path: /mnt/user/Media/movies-4k
+        mountPath: /mnt/movies-4k
+        readOnly: false
+      tv:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.7
+            path: /mnt/user/Media/tv
+        mountPath: /mnt/tv
+        readOnly: false
+      tv-4k:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.7
+            path: /mnt/user/Media/tv-4k
+        mountPath: /mnt/tv-4k
+        readOnly: false
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
