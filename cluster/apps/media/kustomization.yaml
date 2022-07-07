@@ -6,3 +6,4 @@ resources:
   - overseerr
   - radarr
   - bazarr
+  - nzbget
