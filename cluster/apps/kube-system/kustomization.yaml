@@ -8,6 +8,6 @@ resources:
   # - kured
   - reflector
   - reloader
-  - intel-gpu-plugin
+  # - intel-gpu-plugin
   - metrics-server
-  - node-feature-discovery
+  # - node-feature-discovery
