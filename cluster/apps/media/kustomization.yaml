@@ -9,3 +9,5 @@ resources:
   - sonarr
   - sonarr-uhd
   - bazarr
+  - plex
+  - jellyfin

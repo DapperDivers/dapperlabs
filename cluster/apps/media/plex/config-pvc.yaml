@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-config-v1
+  namespace: media
+  labels:
+    kasten.io/backup-volume: "enabled"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: csi-truenas-iscsi-retain # use csi-truenas-iscsi-retain if redeploy
+  resources:
+    requests:
+      storage: 50Gi
