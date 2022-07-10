@@ -53,8 +53,8 @@ spec:
         volumeSpec:
           nfs:
             server: 192.168.1.6
-            path: /mnt/user/Rhino
-        mountPath: /downloads
+            path: /mnt/Tank/Media/books
+        mountPath: /books
         readOnly: false
       downloads:
         enabled: true
