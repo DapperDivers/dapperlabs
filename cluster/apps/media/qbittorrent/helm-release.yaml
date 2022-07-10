@@ -87,7 +87,7 @@ spec:
         type: custom
         volumeSpec:
           nfs:
-            server: 192.168.1.8
+            server: 192.168.1.9
             path: /export/Used/downloads/
         mountPath: /used-media
         readOnly: false
