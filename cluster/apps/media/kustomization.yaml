@@ -6,8 +6,8 @@ resources:
   - overseerr
   - radarr
   - radarr-uhd
-  # - sonarr
-  # - sonarr-uhd
+  - sonarr
+  - sonarr-uhd
   - bazarr
   - plex
   - jellyfin
