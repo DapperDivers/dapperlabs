@@ -43,5 +43,3 @@ spec:
       config:
         enabled: true
         existingClaim: nzbhydra2-config-v1
-    env:
-      TZ: "${TIMEZONE}"
