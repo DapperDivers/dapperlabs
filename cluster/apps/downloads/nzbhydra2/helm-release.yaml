@@ -19,6 +19,9 @@ spec:
   values:
     global:
       nameOverride: *app
+    image:
+      repository: linuxserver/nzbhydra2
+      tag: 4.5.0-dev
     ingress:
       main:
         enabled: true
