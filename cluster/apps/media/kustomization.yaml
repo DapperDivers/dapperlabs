@@ -9,5 +9,9 @@ resources:
   - sonarr
   - sonarr-uhd
   - bazarr
+  - tautulli
+  - qbittorrent
+  - media-browser
+  - lidarr
   - plex
   - jellyfin

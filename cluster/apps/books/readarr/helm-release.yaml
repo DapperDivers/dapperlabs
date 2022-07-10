@@ -47,6 +47,15 @@ spec:
       config:
         enabled: true
         existingClaim: readarr-config-v1
+      media:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.6
+            path: /mnt/user/Rhino
+        mountPath: /downloads
+        readOnly: false
       downloads:
         enabled: true
         type: custom
@@ -55,6 +64,15 @@ spec:
             server: 192.168.1.7
             path: /mnt/user/Rhino
         mountPath: /downloads
+        readOnly: false
+      backup:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.6
+            path: /mnt/Tank/Arr-backups/app/tautulli/
+        mountPath: /config/backups
         readOnly: false
     env:
       TZ: "${TIMEZONE}"
