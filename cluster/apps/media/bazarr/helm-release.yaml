@@ -54,6 +54,15 @@ spec:
       config:
         enabled: true
         existingClaim: bazarr-config-v1
+      backup:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.6
+            path: /mnt/Tank/Arr-backups/app/bazarr/
+        mountPath: /config/backups
+        readOnly: false
       movies:
         enabled: true
         type: custom

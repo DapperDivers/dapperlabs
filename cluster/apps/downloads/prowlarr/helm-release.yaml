@@ -46,5 +46,14 @@ spec:
       config:
         enabled: true
         existingClaim: prowlarr-config-v1
+      backup:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.1.6
+            path: /mnt/Tank/Arr-backups/app/prowlarr/
+        mountPath: /config/backups
+        readOnly: false
     env:
       TZ: "${TIMEZONE}"
