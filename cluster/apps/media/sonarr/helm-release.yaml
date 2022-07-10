@@ -30,7 +30,7 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       sonarr__INSTANCE_NAME: sonarr
-      sonarr__PORT: &port 7878
+      sonarr__PORT: &port 8989
       sonarr__BRANCH: nightly
       sonarr__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
       sonarr__LOG_LEVEL: info
