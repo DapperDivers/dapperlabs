@@ -18,3 +18,4 @@ resources:
   - weaveworks-kured.yaml
   - nfs-subdir-external-provisioner.yaml
   - democratic-csi.yaml
+  - node-feature-discovery.yaml
