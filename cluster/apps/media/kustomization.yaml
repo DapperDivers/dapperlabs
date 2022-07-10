@@ -10,8 +10,8 @@ resources:
   - sonarr-uhd
   - bazarr
   - tautulli
+  - prowlarr
   - qbittorrent
-  - media-browser
   - lidarr
   - plex
   - jellyfin
