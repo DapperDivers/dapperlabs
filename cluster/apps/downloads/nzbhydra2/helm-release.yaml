@@ -17,8 +17,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: linuxserver/nzbhydra2
-      tag: 4.4.0
+      repository: ghcr.io/k8s-at-home/nzbhydra2
+      tag: v3.14.2
     ingress:
       main:
         enabled: true
