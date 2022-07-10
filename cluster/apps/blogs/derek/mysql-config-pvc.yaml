@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: derek-ghost-mysql-data
+  namespace: blogs
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: csi-truenas-iscsi-retain # use csi-truenas-iscsi-retain if redeploy
