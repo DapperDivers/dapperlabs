@@ -6,7 +6,6 @@ resources:
   - books
   - media
   - downloads
-  - vpn
   - default
   - flux-system
   - kube-system
