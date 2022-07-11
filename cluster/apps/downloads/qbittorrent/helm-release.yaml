@@ -31,7 +31,7 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       QBITTORRENT__PORT: &port 80
-      QBITTORRENT__BT_PORT: &port-bt ${BOOTSTRAP_SECRET_VPN_FORWARDED_PORT_1}
+      QBITTORRENT__BT_PORT: &port-bt 57167
     service:
       main:
         ports:
