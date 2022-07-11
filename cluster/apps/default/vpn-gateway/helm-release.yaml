@@ -1,3 +1,4 @@
+# HelmRelease.yaml
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -19,6 +20,6 @@ spec:
       interval: 5m
 
   # See https://github.com/k8s-at-home/charts/blob/master/charts/pod-gateway/values.yaml
-    values:
-      routed_namespaces:
-        - vpn
+  values:
+    routed_namespaces:
+      - vpn
