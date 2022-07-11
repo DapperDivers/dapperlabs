@@ -64,7 +64,7 @@ spec:
                     cidr: 0.0.0.0/0
               ports:
                 # VPN traffic
-                - port: "51820"
+                - port: 51820
                   protocol: UDP
             - to:
                 - namespaceSelector: {}
@@ -76,7 +76,7 @@ spec:
       VXLAN_ID: 43
       VXLAN_IP_NETWORK: "192.168.242.0/24"
       VPN_BLOCK_OTHER_TRAFFIC: true
-      VPN_TRAFFIC_PORT: "51820"
+      VPN_TRAFFIC_PORT: 51820
       NOT_ROUTED_TO_GATEWAY_CIDRS: "172.16.0.0/12 192.168.0.0/16"
       VPN_LOCAL_CIDRS: "172.16.0.0/12 192.168.0.0/16"
     publicPorts:
