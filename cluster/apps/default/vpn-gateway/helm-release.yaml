@@ -68,7 +68,7 @@ spec:
                   protocol: UDP
             - to:
                 - namespaceSelector: {}
-    DNS: 172.16.1.1
+    DNS: 10.64.0.1
     routed_namespaces:
       - downloads
     settings:
