@@ -71,7 +71,7 @@ spec:
         volumeSpec:
           nfs:
             server: 192.168.1.6
-            path: /mnt/Tank/Arr-backups/app/tautulli/
+            path: /mnt/Tank/Arr-backups/app/readarr/
         mountPath: /config/backups
         readOnly: false
     env:
