@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: pod-gateway
-      version: 5.2.0
+      version: 5.5.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -96,7 +96,7 @@ spec:
             command:
               - sh
               - -c
-              - if [ $(curl -s https://am.i.mullvad.net/city) = '${SECRET_WIREGUARD_CITY}' ]; then exit 0; else exit $?; fi
+              - if [ $(curl -s https://am.i.mullvad.net/country) = 'US' ]; then exit 0; else exit $?; fi
           initialDelaySeconds: 30
           periodSeconds: 60
           failureThreshold: 1
