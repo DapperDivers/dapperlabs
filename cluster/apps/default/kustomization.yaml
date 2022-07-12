@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - echo-server
-  - vpn-gateway
+  # - pod-gateway
   - hajimari
   - uptime-kuma
   - theme-park
