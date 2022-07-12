@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     podAnnotations:
-      configmap.reloader.stakater.com/reload: "downloads-gateway-pod-gateway"
+      configmap.reloader.stakater.com/reload: "default-pod-gateway"
       secret.reloader.stakater.com/reload: "downloads-gateway-vpnconfig"
 
     DNS: 172.16.1.1
