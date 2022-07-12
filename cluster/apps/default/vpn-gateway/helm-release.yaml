@@ -93,8 +93,7 @@ spec:
 
         livenessProbe:
           exec:
-            command:
-              - if $(curl -s https://am.i.mullvad.net/country) = 'US'; then exit 0; else exit $?; fi
+            command: ['sh', '-c', 'if $(curl -s https://am.i.mullvad.net/country) = "US"; then exit 0; else exit $?; fi']
           initialDelaySeconds: 30
           periodSeconds: 60
           failureThreshold: 1
