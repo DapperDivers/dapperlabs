@@ -6,5 +6,4 @@ resources:
   - echo-server
   - hajimari
   - uptime-kuma
-  - pod-gateway
   - theme-park
