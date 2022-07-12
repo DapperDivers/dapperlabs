@@ -41,15 +41,15 @@ spec:
             memory: 128Mi
           limits:
             memory: 512Mi
-        # livenessProbe:
-        #   exec:
-        #     command:
-        #       - sh
-        #       - -c
-        #       - grep -q "are connected" <<< $(curl -s https://am.i.mullvad.net/connected)
-        #   initialDelaySeconds: 30
-        #   periodSeconds: 60
-        #   failureThreshold: 1
+        livenessProbe:
+          exec:
+            command:
+              - sh
+              - -c
+              - grep -q "are connected" <<< $(curl -s https://am.i.mullvad.net/connected)
+          initialDelaySeconds: 30
+          periodSeconds: 60
+          failureThreshold: 1
         securityContext:
           runAsUser: 568
           runAsGroup: 568
