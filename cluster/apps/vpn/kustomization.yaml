@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - downloads-gateway
-  - vpn
+  - pod-gateway
   - secret.sops.yaml
