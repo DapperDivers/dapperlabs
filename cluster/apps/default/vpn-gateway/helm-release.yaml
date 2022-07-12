@@ -76,7 +76,7 @@ spec:
           failureThreshold: 3
     routed_namespaces:
       - downloads
-    DNS: 172.16.0.1
+    DNS: 172.16.1
     settings:
       VPN_INTERFACE: wg0
       VXLAN_ID: 43
