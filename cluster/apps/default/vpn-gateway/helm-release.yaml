@@ -77,9 +77,9 @@ spec:
               - "SYS_MODULE"
 
         env:
-          TZ: "${TZ}"
+          TZ: "${TIMEZONE}"
           IPTABLES_BACKEND: nft
-          KILLSWITCH: "false"
+          KILLSWITCH: "True"
 
         configFileSecret: vpn-gateway-vpnconfig
         resources:
