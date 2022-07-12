@@ -19,6 +19,7 @@ spec:
   values:
     global:
       nameOverride: *app
+    hostname: *app
     ingress:
       main:
         enabled: true
