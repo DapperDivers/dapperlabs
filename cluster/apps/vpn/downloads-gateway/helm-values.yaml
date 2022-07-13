@@ -3,11 +3,12 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pod-gateway
+  namespace: vpn
 spec:
   values:
     podAnnotations:
       configmap.reloader.stakater.com/reload: "vpn-pod-gateway"
-      secret.reloader.stakater.com/reload: "downloads-gateway-vpnconfig"
+      secret.reloader.stakater.com/reload: "vpn-gateway-vpnconfig"
 
     DNS: 172.16.1.1
 
@@ -59,4 +60,4 @@ spec:
 
         envFrom:
           - secretRef:
-              name: downloads-gateway-vpnconfig
+              name: vpn-gateway-vpnconfig
