@@ -5,4 +5,3 @@ resources:
   - namespace.yaml
   - downloads-gateway
   - pod-gateway
-  - secret.sops.yaml
