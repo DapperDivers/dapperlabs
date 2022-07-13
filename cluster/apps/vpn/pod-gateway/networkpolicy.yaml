@@ -5,7 +5,7 @@ metadata:
   name: vpn-pod-gateway
   namespace: vpn
   labels:
-    app.kubernetes.io/instance: downloads-gateway
+    app.kubernetes.io/instance: pod-gateway
     app.kubernetes.io/name: pod-gateway
 spec:
   egress:
@@ -19,7 +19,7 @@ spec:
         - namespaceSelector: {}
   podSelector:
     matchLabels:
-      app.kubernetes.io/instance: downloads-gateway
+      app.kubernetes.io/instance: pod-gateway
       app.kubernetes.io/name: pod-gateway
   policyTypes:
     - Egress
