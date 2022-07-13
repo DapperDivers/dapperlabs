@@ -6,15 +6,15 @@ resources:
   - ../pod-gateway
   - ./secret.sops.yaml
   - ./networkpolicy.yaml
-patchesJson6902:
-  - target:
-      group: helm.toolkit.fluxcd.io
-      version: v2beta1
-      kind: HelmRelease
-      name: pod-gateway
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: downloads-gateway
-patchesStrategicMerge:
-  - helm-values.yaml
+# patchesJson6902:
+#   - target:
+#       group: helm.toolkit.fluxcd.io
+#       version: v2beta1
+#       kind: HelmRelease
+#       name: pod-gateway
+#     patch: |-
+#       - op: replace
+#         path: /metadata/name
+#         value: downloads-gateway
+# patchesStrategicMerge:
+#   - helm-values.yaml
