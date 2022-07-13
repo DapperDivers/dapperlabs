@@ -1,0 +1,39 @@
+# TestDeployment.yaml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &app terminal
+  namespace: vpn
+  labels:
+    app: terminal
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: terminal
+  hostname: *app
+  podAnnotations:
+    setGateway: "true"
+  template:
+    metadata:
+      labels:
+        app: terminal
+  resources:
+    requests:
+      cpu: 10m
+      memory: 250Mi
+    limits:
+      memory: 6000Mi
+    spec:
+      containers:
+        - name: alpine
+          image: alpine
+          command:
+            - /bin/sh
+            - -c
+            - while true; do
+              sleep 600 &
+              wait $!;
+              done
