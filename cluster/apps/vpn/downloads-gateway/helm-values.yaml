@@ -43,16 +43,7 @@ spec:
         securityContext:
           capabilities:
             add:
-              - NET_ADMIN
-
-        lifecycle:
-          postStart:
-            exec:
-              command:
-                - "/bin/sh"
-                - "-c"
-                - |
-                  ip rule add from all lookup main suppress_prefixlength 0 preference 50;
+              - NET_ADMINz
 
         env:
           - name: TZ
