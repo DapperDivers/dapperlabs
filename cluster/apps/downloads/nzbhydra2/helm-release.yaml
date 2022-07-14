@@ -23,8 +23,6 @@ spec:
       repository: linuxserver/nzbhydra2
       tag: 4.5.0-dev
     hostname: *app
-    podAnnotations:
-      setGateway: "true"
     ingress:
       main:
         enabled: true
