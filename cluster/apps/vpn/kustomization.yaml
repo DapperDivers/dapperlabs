@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - vpn-gateway
-  - k8sprobe.yaml
+  - k8probe.yaml
