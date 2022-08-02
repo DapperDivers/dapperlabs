@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      version: 2.0.0
+      version: 2.1.2
       chart: ghost
       sourceRef:
         kind: HelmRepository
