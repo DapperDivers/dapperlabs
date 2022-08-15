@@ -34,7 +34,7 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       QBITTORRENT__PORT: &port 80
-      QBITTORRENT__BT_PORT: &port-bt 57167
+      QBITTORRENT__BT_PORT: &port-bt 59249
     service:
       main:
         ports:
