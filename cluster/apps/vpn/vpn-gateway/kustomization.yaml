@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: vpn
 resources:
   - helm-release.yaml
-  - secret.sops.yaml
+  - k8probe.yaml
