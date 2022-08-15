@@ -68,7 +68,7 @@ spec:
       config:
         enabled: true
         existingClaim: plex-config-v1
-      tower:
+      media:
         enabled: true
         type: custom
         volumeSpec:
@@ -77,7 +77,7 @@ spec:
             path: /mnt/user/Media
         mountPath: /mnt/tower
         readOnly: false
-      tower-2:
+      4kmedia:
         enabled: true
         type: custom
         volumeSpec:
