@@ -5,10 +5,7 @@ resources:
   - namespace.yaml
   - cert-manager
   # - kured
-  - reflector
-  - reloader
-  - intel-gpu-plugin
   - metrics-server
+  - reloader
   - node-feature-discovery
-
-  - kube-vip
+  - intel-gpu-plugin
