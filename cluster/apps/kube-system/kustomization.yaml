@@ -9,3 +9,4 @@ resources:
   - reloader
   - node-feature-discovery
   - intel-gpu-plugin
+  - kube-vip
