@@ -44,7 +44,7 @@
             - https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
         - name: Packages | Install required packages
           ansible.builtin.dnf:
-            name: "{{ packages | default([]) }}"
+            name: "{{ packages_to_install | default([]) }}"
             state: present
             update_cache: true
         - name: Packages | Remove leaf packages
