@@ -5,4 +5,4 @@ resources:
   - namespace.yaml
   - kube-prometheus-stack
   - grafana
-  - intel-gpu-exporter
+  # - intel-gpu-exporter
