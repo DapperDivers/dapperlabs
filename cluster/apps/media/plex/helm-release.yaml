@@ -8,13 +8,13 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: plex
-      version: 6.3.3
+      chart: app-template
+      version: 0.1.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-      interval: 15m
   install:
     createNamespace: true
     remediation:
@@ -23,16 +23,16 @@ spec:
     remediation:
       retries: 5
   dependsOn:
-    # - name: intel-gpu-plugin
-    #   namespace: kube-system
+    - name: intel-gpu-plugin
+      namespace: kube-system
     - name: node-feature-discovery
       namespace: kube-system
   values:
     global:
       nameOverride: *app
     image:
-      repository: ghcr.io/k8s-at-home/plex
-      tag: v1.26.1.5798-99a4a6ac9
+      repository: ghcr.io/onedr0p/plex
+      tag: 1.28.2.6151-914ddd2b3@sha256:0b1c10bda8403bb984eb8ae77ec19dd5abdaacc57e2ec42be4316f9dafec6977
     env:
       TZ: "${TIMEZONE}"
     service:

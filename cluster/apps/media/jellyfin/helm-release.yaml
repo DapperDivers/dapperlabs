@@ -8,8 +8,9 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: jellyfin
-      version: 9.4.2
+      chart: app-template
+      version: 0.1.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -30,7 +31,7 @@ spec:
     global:
       nameOverride: *app
     image:
-      repository: ghcr.io/k8s-at-home/jellyfin
+      repository: ghcr.io/onedr0p/jellyfin
       tag: 10.7.7
     env:
       TZ: "${TIMEZONE}"

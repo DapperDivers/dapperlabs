@@ -8,8 +8,9 @@ spec:
   interval: 11m0s
   chart:
     spec:
-      version: 5.3.2
-      chart: overseerr
+      chart: app-template
+      version: 0.1.1
+      interval: 15m
       sourceRef:
         kind: HelmRepository
         name: bjw-s
