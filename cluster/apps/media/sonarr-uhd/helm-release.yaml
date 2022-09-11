@@ -12,7 +12,7 @@ spec:
       chart: sonarr
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home
+        name: bjw-s
         namespace: flux-system
   install:
     createNamespace: true
