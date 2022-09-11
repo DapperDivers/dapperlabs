@@ -8,5 +8,5 @@ resources:
   - metrics-server
   - reloader
   - node-feature-discovery
-  # - intel-gpu-plugin
+  - intel-gpu-plugin
   - kube-vip
