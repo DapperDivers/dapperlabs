@@ -21,7 +21,7 @@ spec:
       nameOverride: *app
     image:
       repository: linuxserver/nzbhydra2
-      tag: 4.4.0
+      tag: 4.7.6
     hostname: *app
     ingress:
       main:
