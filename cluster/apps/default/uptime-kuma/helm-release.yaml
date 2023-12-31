@@ -29,7 +29,7 @@ spec:
       replicas: "1"
     image:
       repository: louislam/uptime-kuma
-      tag: 1.17.1-alpine
+      tag: 1.23.11-alpine
     service:
       main:
         ports:
