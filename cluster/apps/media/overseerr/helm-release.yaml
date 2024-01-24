@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/sct/overseerr
-      tag: 1.29.1
+      tag: 1.33.2
     ingress:
       main:
         enabled: true
