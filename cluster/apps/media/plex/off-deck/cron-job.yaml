@@ -19,7 +19,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: jbops
-              image: ghcr.io/onedr0p/jbops:1.0.880@sha256:803437d399d940dd441a7533a196524b283ca5c76baf968a4decc100f23b48cc
+              image: ghcr.io/onedr0p/jbops:1.0.893@sha256:b8b6bd8337ddb64b20c1136a1b5635313b0ad4930f052e99ae27a4fcf61ef954
               env:
                 - name: TZ
                   value: "${TIMEZONE}"
