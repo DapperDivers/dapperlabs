@@ -24,7 +24,7 @@ spec:
 
     additionalContainers:
       gluetun:
-        image: qmcgaw/gluetun:v3.30.0@sha256:6bbc9ae5975dac7745a2fadee196f3456d2916adb1736f15a11896e599ba2a7d
+        image: qmcgaw/gluetun:v3.38.0@sha256:5522794f5cce6d84bc7f06b1e3a3b836ede9100c64aec94543cb503bb2ecb72f
 
         env:
           - name: VPN_TYPE
